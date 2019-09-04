@@ -1,0 +1,53 @@
+﻿
+@{
+//Layout = null;
+}
+
+<div class="panel panel-body" style="min-height:256px">
+    @*<div class="col-md-3">
+        @{ Html.RenderAction("SideMenu", "Test");}
+    </div>*@
+    <div>
+        <h4>Send email</h4>
+        @*<input type="text" class="form-control" id="textAutocomplete" />*@
+        <a class="btn btn-danger" onclick="SendEmail()">Click Send Email</a>
+    </div>
+</div>
+
+<script>
+    var SendEmail = function () {
+        //Console.log();
+        $.ajax({
+            type: "Post",
+            url: "/Test/SendEmailToUser",
+            success: function (data) {
+                //if (data == true) {
+                //    alert("Success");
+                //}
+                //else {
+                //    alert("Fails");
+                //}
+                alert("Success");
+            }
+        })
+    }
+
+
+    //var autoSuggestionArray = ["Ashish", "Apple", "Orange", "Boy", "Girl"]
+    //$("#textAutocomplete").autoComplete({
+    //    source: function (request, response) {
+    //        var text = $("#textAutocomplete").val();
+
+    //        $.ajax({
+    //            type: "GET",
+    //            url: "/Test/GetSuggestion",
+    //            data: { text: request.term },
+    //            success: function (data) {
+    //                response($.map(data, function (item) {
+    //                    return { lable: item, value: item }
+    //                }))
+    //            }
+    //        })
+    //    }
+    //});
+</script>
